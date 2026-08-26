@@ -50,6 +50,30 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 25
 }
 
+tasks.register("validateTranslations") {
+	def englishFile = file("src/main/resources/assets/beetastic/lang/en_us.json")
+	def polishFile = file("src/main/resources/assets/beetastic/lang/pl_pl.json")
+	inputs.files(englishFile, polishFile)
+
+	doLast {
+		def parser = new groovy.json.JsonSlurper()
+		def englishKeys = parser.parse(englishFile).keySet()
+		def polishKeys = parser.parse(polishFile).keySet()
+		def missingInPolish = englishKeys - polishKeys
+		def missingInEnglish = polishKeys - englishKeys
+
+		if (!missingInPolish.isEmpty() || !missingInEnglish.isEmpty()) {
+			throw new GradleException(
+				"Translation keys differ. Missing in pl_pl: ${missingInPolish}; missing in en_us: ${missingInEnglish}"
+			)
+		}
+	}
+}
+
+tasks.named("check") {
+	dependsOn tasks.named("validateTranslations")
+}
+
 java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 	// if it is present.

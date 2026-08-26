@@ -3,7 +3,7 @@
 	"package": "xedziu.beetastic.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"BeeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,9 +1,14 @@
-# beetastic
+# Beetastic
 
-## Setup
+Beetastic is a vanilla-style overhaul of Minecraft's bees and honey for Fabric.
+Bees create different honey varieties from the flowers they pollinate while
+remaining the familiar vanilla bees.
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+## Development
+- Minecraft 26.2
+- Fabric Loader and Fabric API
+- JDK 25
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+CC0-1.0. See `LICENSE`.

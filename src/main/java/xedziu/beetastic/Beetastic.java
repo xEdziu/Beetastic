@@ -7,6 +7,11 @@ import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import xedziu.beetastic.attachment.BeetasticAttachments;
+import xedziu.beetastic.clientcontent.BeetasticCreativeTabs;
+import xedziu.beetastic.component.BeetasticComponents;
+import xedziu.beetastic.honey.HiveHarvestHandler;
+
 public class Beetastic implements ModInitializer {
 	public static final String MOD_ID = "beetastic";
 
@@ -17,11 +22,12 @@ public class Beetastic implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		BeetasticComponents.initialize();
+		BeetasticAttachments.initialize();
+		BeetasticCreativeTabs.initialize();
+		HiveHarvestHandler.initialize();
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Beetastic initialized");
 	}
 
 	public static Identifier id(String path) {

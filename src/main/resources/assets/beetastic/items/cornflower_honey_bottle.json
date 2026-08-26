@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "minecraft:item/honey_bottle",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -10716968
+      }
+    ]
+  }
+}

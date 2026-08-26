@@ -2,15 +2,11 @@
 	"schemaVersion": 1,
 	"id": "beetastic",
 	"version": "${version}",
-	"name": "beetastic",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Beetastic",
+	"description": "A vanilla-style overhaul of Minecraft's bees and honey.",
 	"authors": [
-		"Me!"
+		"xedziu"
 	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
 	"license": "CC0-1.0",
 	"icon": "assets/beetastic/icon.png",
 	"environment": "*",
@@ -26,11 +22,7 @@
 		]
 	},
 	"mixins": [
-		"beetastic.mixins.json",
-		{
-			"config": "beetastic.client.mixins.json",
-			"environment": "client"
-		}
+		"beetastic.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
